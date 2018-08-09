@@ -65,6 +65,7 @@ module.exports = {
   },
 
   beforeCreate: async function (valuesToSet, proceed) {
+    sails.log(valuesToSet)
     valuesToSet.password = await sails.helpers.generateToken(valuesToSet.password);
 
     proceed();

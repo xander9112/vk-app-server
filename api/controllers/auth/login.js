@@ -40,7 +40,7 @@ module.exports = {
           const account = await VkUtils.getAccountProfileInfo(user.token);
 
           const profile = await Profile.create(account).fetch();
-          await User.create({...user, login, profile: profile.id});
+          await User.create({...user, password, login, profile: profile.id});
 
           const newUser = await User.findOne({login})
             .populate('profile');
