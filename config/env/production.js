@@ -251,7 +251,7 @@ module.exports = {
     *                                                                          *
     ***************************************************************************/
     onlyAllowOrigins: [
-      'https://vk-server.herokuapp.com/'
+      'https://vk-server.herokuapp.com'
     ],
 
 
