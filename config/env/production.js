@@ -148,7 +148,7 @@ module.exports = {
     *                                                                          *
     ***************************************************************************/
     cors: {
-      // allowOrigins: [
+      // allowOrigins: [sockets
       //   'https://example.com',
       // ]
     },
@@ -250,10 +250,9 @@ module.exports = {
     * > Be sure to use the right protocol!  ("http://" vs. "https://")         *
     *                                                                          *
     ***************************************************************************/
-    // onlyAllowOrigins: [
-    //   'https://example.com',
-    //   'https://staging.example.com',
-    // ],
+    onlyAllowOrigins: [
+      'http://vk-server-vk.7e14.starter-us-west-2.openshiftapps.com/'
+    ],
 
 
     /***************************************************************************
