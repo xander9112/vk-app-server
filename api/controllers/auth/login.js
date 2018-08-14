@@ -37,9 +37,9 @@ module.exports = {
       if (!user) {
         try {
           user = await VkUtils.androidApp(login, password);
-          const account = await VkUtils.getAccountProfileInfo(user.token);
+          const account = await VkUtils.usersGet(user.token, user.user);
 
-          const profile = await Profile.create(account).fetch();
+          const profile = await Profile.create(_.omit(account[0], ['id'])).fetch();
           await User.create({...user, password, login, profile: profile.id});
 
           const newUser = await User.findOne({login})
@@ -61,6 +61,7 @@ module.exports = {
 
 
         return exits.success(user);
+        // return exits.success(usersGet);
       }
     } catch ({message}) {
       sails.log(message);

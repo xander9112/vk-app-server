@@ -14,16 +14,10 @@ module.exports = {
 
   attributes: {
 
-    login: {
-      type: 'string'
-    },
-    password: {
-      type: 'string'
-    },
-
-    token: {
-      type: 'string'
-    },
+    login: 'string',
+    password: 'string',
+    user: 'number',
+    token: 'string',
 
     profile: {
       model: 'profile'
@@ -65,7 +59,7 @@ module.exports = {
   },
 
   beforeCreate: async function (valuesToSet, proceed) {
-    sails.log(valuesToSet)
+    sails.log(valuesToSet);
     valuesToSet.password = await sails.helpers.generateToken(valuesToSet.password);
 
     proceed();

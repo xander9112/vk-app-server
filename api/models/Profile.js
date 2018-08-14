@@ -17,7 +17,10 @@ module.exports = {
     bdate: 'string',
     home_town: 'string',
     status: 'string',
-    phone: 'string',
+    mobile_phone: 'string',
+    photo_200: 'string',
+    has_photo: 'number',
+    has_mobile: 'number',
     crop_photo: 'json'
   }
 };
