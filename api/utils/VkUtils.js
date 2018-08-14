@@ -33,7 +33,13 @@ module.exports = {
   getAccountProfileInfo: async (accessToken) => {
     vk.setToken(accessToken);
 
-    return api.account.getProfileInfo();
+    return api.account.getProfileInfo({fields: 'crop_photo'});
+  },
+
+  getAccountCounters: async (accessToken) => {
+    vk.setToken(accessToken);
+
+    return api.account.getCounters({filter: 'messages'});
   },
 
   getGroupsByIds: async (accessToken, group_ids) => {
@@ -102,5 +108,11 @@ module.exports = {
         resolve({total, items});
       });
     });
+  },
+
+  messagesGetConversations: async (accessToken, params) => {
+    vk.setToken(accessToken);
+
+    return api.messages.getConversations(params);
   }
 };

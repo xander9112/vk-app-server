@@ -9,7 +9,7 @@
  * https://sailsjs.com/config/bootstrap
  */
 
-module.exports.bootstrap = async function(done) {
+module.exports.bootstrap = async function (done) {
 
   // By convention, this is a good place to set up fake data during development.
   //
@@ -26,7 +26,28 @@ module.exports.bootstrap = async function(done) {
   //   // etc.
   // ]);
   // ```
-
+  // try {
+  //   const profile = await ConversationProfile.create({
+  //     profile_id: 12312312,
+  //     first_name: 'Александр',
+  //     last_name: 'Фурманчук',
+  //     deactivated: ''
+  //   }).fetch();
+  //
+  //   const peer = await Peer.create({
+  //     peer: profile.id,
+  //     type: 'user',
+  //     local_id: 321
+  //   }).fetch();
+  //
+  //   await Conversation.create({
+  //     peer: peer.id
+  //   });
+  // } catch (error) {
+  //   sails.log(error.name);
+  //   sails.log(error.code);
+  //   sails.log(error.details);
+  // }
   // Don't forget to trigger `done()` when this bootstrap function's logic is finished.
   // (otherwise your server will never lift, since it's waiting on the bootstrap)
   return done();

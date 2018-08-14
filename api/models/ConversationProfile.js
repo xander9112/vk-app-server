@@ -7,18 +7,18 @@
 
 module.exports = {
 
-  tableName: 'profiles',
+  tableName: 'conversation-profiles',
 
   attributes: {
+    profile_id: 'number',
     first_name: 'string',
     last_name: 'string',
-    screen_name: 'string',
-    sex: 'number',
-    bdate: 'string',
-    home_town: 'string',
-    status: 'string',
-    phone: 'string',
-    crop_photo: 'json'
+    deactivated: 'string',
+    crop_photo: 'json',
+    peer: {
+      model: 'peer'
+    }
   }
+
 };
 

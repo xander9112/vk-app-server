@@ -1,4 +1,5 @@
 const VkUtils = require('../../utils/VkUtils');
+
 module.exports = {
 
 
@@ -16,10 +17,7 @@ module.exports = {
   },
 
 
-  exits: {
-    success: {},
-    error: {}
-  },
+  exits: {},
 
 
   fn: async function (inputs, exits) {
@@ -28,6 +26,8 @@ module.exports = {
     try {
       let user = await User.findOne({token})
         .populate('profile');
+
+      user.counters = await VkUtils.getAccountCounters(token);
 
       return exits.success(user);
     } catch ({message}) {
