@@ -30,7 +30,7 @@ module.exports = {
     const {offset, count} = inputs;
 
     try {
-      const conversations = await VkUtils.messagesGetConversations(this.req.headers['x-token'], {
+      const conversations = await VkUtils.messagesGetHistory(this.req.headers['x-token'], {
         offset,
         count,
         extended: 1,
