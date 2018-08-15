@@ -115,6 +115,11 @@ module.exports = {
 
     return api.messages.getConversations(params);
   },
+  messagesGetHistory: async (accessToken, params) => {
+    vk.setToken(accessToken);
+
+    return api.messages.getHistory(params);
+  },
 
   usersGet: async (accessToken, user_ids) => {
     vk.setToken(accessToken);

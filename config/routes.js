@@ -48,6 +48,7 @@ module.exports.routes = {
   'POST /api/v1/user/getCurrentUser': {action: 'user/get-current-user'},
 
   'GET /api/v1/messages/get-conversations': {action: 'messages/get-conversations'},
+  'GET /api/v1/messages/get-history': {action: 'messages/get-history'}
 
   //  ╦ ╦╔═╗╔╗ ╦ ╦╔═╗╔═╗╦╔═╔═╗
   //  ║║║║╣ ╠╩╗╠═╣║ ║║ ║╠╩╗╚═╗
